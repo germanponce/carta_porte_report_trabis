@@ -222,20 +222,42 @@
     </td>
   </tr>
   <tr>
-    <td class="tg02-0lax"></td>
-    <td class="tg02-0lax"></td>
-    <td class="tg02-0lax"></td>
-    <td class="tg02-cly1" colspan="4" rowspan="4">
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-cly1" colspan="4" rowspan="4">
         <span style="color:#297CBA;font-weight:bold;">Importe con letra:</span><br/><span t-field="o.amount_to_text"/>
     </td>
-    <td class="tg02-vz3e">
+    <td style="padding: 2px;" class="tg02-vz3e">
         <span style="color:#297CBA;font-weight:bold;">Subtotal</span>
     </td>
-    <td class="tg02-cly1-r">
+    <td style="padding: 2px;" class="tg02-cly1-r">
         <span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
     </td>
   </tr>
-  <tr t-foreach="o.tax_line_ids" t-as="t" class="border-black" id="taxes">
+  <tr>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-vz3e">
+        <span style="color:#297CBA;font-weight:bold;">Impuestos Trasladados</span>
+    </td>
+    <td style="padding: 2px;" class="tg02-cly1-r">
+        <span t-esc="o.get_account_tax_trasl()" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-vz3e">
+        <span style="color:#297CBA;font-weight:bold;">Impuestos Retenidos</span>
+    </td>
+    <td style="padding: 2px;" class="tg02-cly1-r">
+        <span t-esc="o.get_account_tax_ret()" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+    </td>
+  </tr>
+  <!-- <tr t-foreach="o.tax_line_ids" t-as="t" class="border-black" id="taxes">
     <td class="tg02-0lax"></td>
     <td class="tg02-0lax"></td>
     <td class="tg02-0lax"></td>
@@ -245,16 +267,16 @@
     <td class="tg02-cly1-r">
         <span t-field="t.abs_amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
     </td>
-  </tr>
+  </tr> -->
 
   <tr>
-    <td class="tg02-0lax"></td>
-    <td class="tg02-0lax"></td>
-    <td class="tg02-0lax"></td>
-    <td class="tg02-vz3e">
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-0lax"></td>
+    <td style="padding: 2px;" class="tg02-vz3e">
         <span style="color:#297CBA;font-weight:bold;">Total</span>
     </td>
-    <td class="tg02-cly1-r">
+    <td style="padding: 2px;" class="tg02-cly1-r">
         <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
     </td>
   </tr>

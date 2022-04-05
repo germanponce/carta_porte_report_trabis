@@ -26,3 +26,25 @@ _logger = logging.getLogger(__name__)
 
 class AccountInvoice(models.Model):
     _inherit ='account.invoice'
+
+    def get_account_tax_ret(self):
+        TotalImpuestosTrasladados = 0
+        TotalImpuestosRetenidos = 0
+        for line_tax_id in invoice.tax_line_ids:
+            line_tax_id_amount = abs(line_tax_id.amount or 0.0)
+            if line_tax_id.amount >= 0:
+                TotalImpuestosTrasladados += line_tax_id_amount
+            else:
+                TotalImpuestosRetenidos += line_tax_id_amount
+        return TotalImpuestosRetenidos
+
+    def get_account_tax_trasl(self):
+        TotalImpuestosTrasladados = 0
+        TotalImpuestosRetenidos = 0
+        for line_tax_id in invoice.tax_line_ids:
+            line_tax_id_amount = abs(line_tax_id.amount or 0.0)
+            if line_tax_id.amount >= 0:
+                TotalImpuestosTrasladados += line_tax_id_amount
+            else:
+                TotalImpuestosRetenidos += line_tax_id_amount
+        return TotalImpuestosTrasladados
