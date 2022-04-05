@@ -215,7 +215,7 @@
         <span t-esc="l.amount_discount"/>
     </td>
     <td class="tg02-cly1-c">
-        <span t-raw="'%s &lt;br&gt;' % l.invoice_line_tax_ids and ','.join(['[' + x.code + ' ' + x.name + '] - ' for x in l.invoice_line_tax_ids]) or '-'"/>
+        <span t-raw="'%s &lt;br&gt;' % l.invoice_line_tax_ids and ','.join([ x.name + ', ' for x in l.invoice_line_tax_ids]) or '-'"/>
     </td>
     <td class="tg02-cly1-r">
         <span t-field="l.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
