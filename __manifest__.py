@@ -18,7 +18,7 @@
 
 {
     'name': 'Formato Factura - Grupo SLS',
-    'category': 'Maeda',
+    'category': 'LdM',
     'description': """
 
         Agrega Modificaciones al Reporte: 
