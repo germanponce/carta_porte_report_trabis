@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data noupdate="1">
+        <record id="paper_carta_porte_report" model="report.paperformat">
+            <field name="name">Carta Porte</field>
+            <field name="format">custom</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_spacing">25</field>
+            <field name="dpi">100</field>
+        </record>
+        
+    </data>
+    <data>
+        <!-- template for project detail -->
+        <template id="carta_porte_trabis_qweb_report">
+            <t>
+                <t t-foreach="docs" t-as="o">
+                        <div class="page">
+                            <header>
+                                <style type="text/css">
+.tg01  {border-collapse:collapse;border-spacing:0;}
+.tg01 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg01 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg01 .tg01-6l08{background-color:#DDD;text-align:left;vertical-align:top}
+.tg01 .tg01-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg01 .tg01-9h5v{background-color:#297CBA;color:#FFF;font-weight:bold;text-align:center;vertical-align:middle;font-size:14px;}
+
+.tg02  {border-collapse:collapse;border-spacing:0;}
+.tg02 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg02 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg02 .tg02-cly1{text-align:left;vertical-align:middle}
+.tg02 .tg02-cly1-r{text-align:right;vertical-align:middle}
+.tg02 .tg02-cly1-c{text-align:center;vertical-align:middle}
+.tg02 .tg02-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:middle}
+.tg02 .tg02-vz3e{background-color:#DDD;color:#209CF9;font-weight:bold;text-align:left;vertical-align:middle}
+.tg02 .tg02-0lax{text-align:left;vertical-align:top}
+
+.tg03  {border-collapse:collapse;border-spacing:0;}
+.tg03 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg03 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg03 .tg03-cly1{text-align:center;vertical-align:middle}
+.tg03 .tg03-mgzv{background-color:#297CBA;color:#FFF;font-weight:bold;text-align:center;vertical-align:top}
+.tg03 .tg03-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg03 .tg03-0lax{text-align:center;vertical-align:top}
+
+.tg04  {border-collapse:collapse;border-spacing:0;}
+.tg04 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg04 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg04 .tg04-cly1{text-align:center;vertical-align:middle}
+.tg04 .tg04-mgzv{background-color:#297CBA;color:#FFF;font-weight:bold;text-align:center;vertical-align:top}
+.tg04 .tg04-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg04 .tg04-0lax{text-align:center;vertical-align:top}
+
+.tg05  {border-collapse:collapse;border-spacing:0;}
+.tg05 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg05 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg05 .tg05-cly1{text-align:center;vertical-align:middle}
+.tg05 .tg05-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg05 .tg05-0lax{text-align:center;vertical-align:top}
+
+.tg06  {border-collapse:collapse;border-spacing:0;}
+.tg06 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg06 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg06 .tg06-cly1{text-align:center;vertical-align:middle}
+.tg06 .tg06-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg06 .tg06-9h5v{background-color:#297CBA;color:#FFF;font-weight:bold;text-align:center;vertical-align:top}
+.tg06 .tg06-0lax{text-align:center;vertical-align:top}
+.tg06 .tg06-0a7q{border-color:#000000;text-align:center;vertical-align:middle}
+.tg06 .tg06-73oq{border-color:#000000;text-align:center;vertical-align:top}
+
+
+.tg07  {border-collapse:collapse;border-spacing:0;}
+.tg07 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg07 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg07 .tg07-cly1{text-align:center;vertical-align:middle}
+.tg07 .tg07-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg07 .tg07-1wig{text-align:center;vertical-align:top}
+.tg07 .tg07-9h5v{background-color:#297CBA;color:#FFF;font-weight:bold;text-align:center;vertical-align:top}
+.tg07 .tg07-0lax{text-align:center;vertical-align:top}
+
+.tg08  {border-collapse:collapse;border-spacing:0;}
+.tg08 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg08 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg08 .tg08-cly1{text-align:center;vertical-align:middle}
+.tg08 .tg08-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg08 .tg08-6l08{background-color:#DDD;text-align:center;vertical-align:top}
+.tg08 .tg08-9h5v{background-color:#297CBA;color:#FFF;font-weight:bold;text-align:center;vertical-align:top}
+.tg08 .tg08-0lax{text-align:center;vertical-align:top}
+
+.tg09  {border-collapse:collapse;border-spacing:0;}
+.tg09 td{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg09 th{border-color:black;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg09 .tg09-cly1{text-align:left;vertical-align:middle}
+.tg09 .tg09-1wig{font-weight:bold;text-align:right;vertical-align:middle}
+
+                                </style>
+                            </header>
+
+<table class="tg01" style="width: 100%">
+<thead>
+  <tr>
+    <th class="tg01-0pky"></th>
+    <th class="tg01-9h5v" colspan="2">CARTA PORTE 2.0</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg01-6l08">
+        <span style="color:#297CBA;font-weight:bold;">Emisor</span><br/>
+        <strong><span t-field="o.company_emitter_id.partner_id.name" /></strong><br/>
+        <span style="color:#297CBA;font-weight:bold;">RFC:</span> <span t-field="o.company_emitter_id.partner_id.vat_split" /><br/>
+        <span style="color:#297CBA;font-weight:bold;">Régimen Fiscal:</span> <span t-field="o.company_emitter_id.partner_id.regimen_fiscal_id.name" /><br/>
+        <span style="color:#297CBA;font-weight:bold;">Lugar de Expedición:</span> <span t-field="o.company_emitter_id.partner_id.zip_sat_id.code"/>
+    </td>
+    <td class="tg01-6l08">
+        <span style="color:#297CBA;font-weight:bold;">Receptor</span><br/>
+        <span t-field="o.partner_id.name"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">RFC:</span> <span t-field="o.partner_id.vat_split"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Uso CFDI:</span> <span t-field="o.uso_cfdi_id"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Domicilio:</span> 
+        <span t-field="o.partner_shipping_id.street"/>
+        <span t-if="o.partner_shipping_id.l10n_mx_street3"> No. <span t-field="o.partner_shipping_id.l10n_mx_street3"/></span>
+        <span t-if="o.partner_shipping_id.l10n_mx_street4"> Int. <span t-field="o.partner_shipping_id.l10n_mx_street4"/></span> <br/>
+        <span t-raw="o.partner_shipping_id.street2 or o.partner_shipping_id.colonia_sat_id.name"/>
+        <span t-if="o.partner_shipping_id.locality_sat_id.name">, <span t-field="o.partner_shipping_id.locality_sat_id.name"/></span>, 
+        <span t-if="o.partner_shipping_id.country_id.code != 'MX'">
+            <span t-field="o.partner_shipping_id.state_id.name"/>, <span t-field="o.partner_shipping_id.country_id.name"/>, 
+            CP: <span t-field="o.partner_shipping_id.zip"/>
+        </span>
+        <span t-if="o.partner_shipping_id.country_id.code == 'MX'">
+            <span t-if="o.partner_shipping_id.township_sat_id.name"><span t-field="o.partner_shipping_id.township_sat_id.name"/>, </span>
+            <span t-field="o.partner_shipping_id.state_id.name"/>, 
+            <span t-field="o.partner_shipping_id.country_id.name"/>, 
+            CP: <span t-field="o.partner_shipping_id.zip"/>
+        </span>
+        <br/>
+        <span style="color:#297CBA;font-weight:bold;">Forma de pago:</span> <span t-raw="'%s &lt;br&gt;' % o.pay_method_ids and ','.join(['[ ' + x.code + '] ' + x.name + ' ' for x in o.pay_method_ids]) or o.pay_method_id.code or '99'"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Método de pago:</span> <span t-field="o.metodo_pago_id"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Moneda:</span> <span t-field="o.currency_id.name"/> <br/>
+        <span style="color:#297CBA;font-weight:bold;">Tipo de cambio:</span> <span t-if="o.tipo_cambio == 1.0">1</span><span t-if="o.tipo_cambio != 1.0"><span t-field="o.tipo_cambio"/></span>
+    </td>
+    <td class="tg01-6l08">
+        <span style="color:#297CBA;font-weight:bold;">Folio:</span> <span t-field="o.number"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Fecha Emisión:</span> <span t-field="o.invoice_datetime"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Tipo Comprobante:</span> <span t-field="o.type_document_id"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">Folio Fiscal (UUID):</span><br/><span t-field="o.cfdi_folio_fiscal"/>891D1792A082<br/>
+        <span style="color:#297CBA;font-weight:bold;">No. Serie Certificado SAT:</span><br/><span t-field="o.cfdi_no_certificado"/><br/>
+        <span style="color:#297CBA;font-weight:bold;">No. Certificado Emisor:</span><br/><span t-field="o.no_certificado"/><br/>Clave de Confirmación:</td>
+  </tr>
+</tbody>
+</table>
+
+<br/>
+
+<table class="tg02" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg02-dydl">Cantidad</td>
+    <td class="tg02-dydl">Unidad</td>
+    <td class="tg02-dydl">Clave Unidad SAT</td>
+    <td class="tg02-dydl">Clave Producto/Servicio </td>
+    <td class="tg02-dydl">Concepto/Descripción</td>
+    <td class="tg02-dydl">Valor Unitario</td>
+    <td class="tg02-dydl">Descuentos</td>
+    <td class="tg02-dydl"> Impuestos</td>
+    <td class="tg02-dydl">Importe</td>
+  </tr>
+</tbody>
+<tbody>
+  <tr t-foreach="o.invoice_line_ids" t-as="l">
+    <td class="tg02-cly1">
+        <span t-field="l.quantity"/>
+    </td>
+    <td class="tg02-cly1">
+        <span t-field="l.uom_id"/>
+    </td>
+    <td class="tg02-cly1">
+        <span t-field="l.uom_id.sat_uom_id"/>
+    </td>
+    <td class="tg02-cly1">
+        <span t-field="l.product_id.sat_product_id"/>
+    </td>
+    <td class="tg02-cly1">
+        <span t-raw="'%s &lt;br&gt;' % l.name if l.name.find('] ') &lt; 0 else l.name[l.name.find('] ')+2:]"/>
+    </td>
+    <td class="tg02-cly1-r">
+        <span t-field="l.price_unit"/>
+    </td>
+    <td class="tg02-cly1-c">
+        <span t-esc="l.amount_discount"/>
+    </td>
+    <td class="tg02-cly1-c">
+        <span t-raw="'%s &lt;br&gt;' % l.invoice_line_tax_ids and ','.join(['[' + x.code + ' ' + x.name + '] - ' for x in l.invoice_line_tax_ids]) or '-'"/>
+    </td>
+    <td class="tg02-cly1-r">
+        <span t-field="l.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-cly1" colspan="4" rowspan="4">
+        <span style="color:#297CBA;font-weight:bold;">Importe con letra:</span><br/><span t-field="o.amount_to_text"/>
+    </td>
+    <td class="tg02-vz3e">
+        <span style="color:#297CBA;font-weight:bold;">Subtotal</span>
+    </td>
+    <td class="tg02-cly1-r">
+        <span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+    </td>
+  </tr>
+  <tr t-foreach="o.tax_line_ids" t-as="t" class="border-black" id="taxes">
+    <td class="tg02-0lax"></td>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-vz3e">
+        <span style="color:#297CBA;font-weight:bold;"><span t-field="t.tax_id.description"/></span>
+    </td>
+    <td class="tg02-cly1-r">
+        <span t-field="t.abs_amount" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-0lax"></td>
+    <td class="tg02-vz3e">
+        <span style="color:#297CBA;font-weight:bold;">Total</span>
+    </td>
+    <td class="tg02-cly1-r">
+        <span t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<br/>
+
+<table class="tg03" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg03-mgzv" colspan="5" style="font-size:14px;">DETALLE DEL COMPLEMENTO CARTAPORTE</td>
+  </tr>
+  <tr>
+    <td class="tg03-dydl">Transporte Internacional</td>
+    <td class="tg03-dydl">Tipo de Transporte Internacional</td>
+    <td class="tg03-dydl">Vía de Transporte Internacional</td>
+    <td class="tg03-dydl">País de Origen o Destino</td>
+    <td class="tg03-dydl">Total distancia recorrida</td>
+  </tr>
+  <tr>
+    <td class="tg03-cly1">
+        <span t-field="o.international_shipping" />
+    </td>
+    <td class="tg03-cly1">
+        <span t-if="o.international_shipping == 'SI'" t-field="o.tipo_transporte_id" />
+        <span t-if="o.international_shipping == 'NO'">-</span>
+    </td>
+    <td class="tg03-0lax">
+        <span t-if="o.international_shipping == 'SI'" t-field="o.tipo_transporte_entrada_salida_id" />
+        <span t-if="o.international_shipping == 'NO'">-</span>
+    </td>
+    <td class="tg03-cly1">
+        <span t-if="o.international_shipping == 'SI'" t-field="o.merchandice_country_origin_id" />
+        <span t-if="o.international_shipping == 'NO'">-</span>
+    </td>
+    <td class="tg03-cly1">
+        <span t-field="o.travel_total_distance" />
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<br/>
+
+<table class="tg04" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg04-mgzv" colspan="5" style="font-size:14px;">DETALLE DEL TRANSPORTE</td>
+  </tr>
+  <tr>
+    <td class="tg04-dydl">Permiso SCT</td>
+    <td class="tg04-dydl">Número de Permiso SCT</td>
+    <td class="tg04-dydl">Configuración Vehicular / Tipo de<br/>Remolque</td>
+    <td class="tg04-dydl">Placa</td>
+    <td class="tg04-dydl">Año</td>
+  </tr>
+  <tr>
+    <td class="tg04-cly1">
+        <span t-field="o.type_stc_permit_id.code" /> - <span t-field="o.type_stc_permit_id.name" />
+    </td>
+    <td class="tg04-cly1">
+        <span t-field="o.type_stc_permit_number" />
+    </td>
+    <td class="tg04-cly1">
+        <span t-field="o.configuracion_federal_id.code" /> - <span t-field="o.configuracion_federal_id.name" />
+    </td>
+    <td class="tg04-cly1">
+        <span t-field="o.vehicle_plate_cp" />
+    </td>
+    <td class="tg04-cly1">
+        <span t-field="o.vehicle_year_model_cp"/>
+    </td>
+  </tr>
+  <t t-foreach="o.trailer_line_ids" t-as="trailer">
+      <tr>
+        <td class="tg04-cly1">
+            Remolque
+        </td>
+        <td class="tg04-0lax"></td>
+        <td class="tg04-cly1">
+            <span t-field="trailer.subtype_trailer_id" />
+        </td>
+        <td class="tg04-cly1">
+            <span t-field="trailer.trailer_plate_cp" />
+        </td>
+        <td class="tg04-0lax"></td>
+      </tr>
+  </t>
+</tbody>
+</table>
+
+<table class="tg05" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg05-dydl">Aseguradora<br/>responsabilidad civil</td>
+    <td class="tg05-dydl">Póliza responsabilidad<br/>Civil</td>
+    <td class="tg05-dydl">Aseguradora medio<br/>Ambiente<br/>Remolque</td>
+    <td class="tg05-dydl">Póliza medio<br/>Ambiente</td>
+    <td class="tg05-dydl">Aseguradora carga</td>
+    <td class="tg05-dydl">Póliza carga</td>
+    <td class="tg05-dydl">Prima seguro</td>
+  </tr>
+  <t t-foreach="o.insurance_ids" t-as="seguro">
+      <tr>
+        <td class="tg05-cly1">
+            <span t-field="seguro.insurance_partner_id.name" />
+        </td>
+        <td class="tg05-cly1">
+            <span t-field="seguro.insurance_policy" />
+        </td>
+        <td class="tg05-0lax">
+            <span t-field="seguro.ambiental_insurance_partner_id.name" />
+        </td>
+        <td class="tg05-0lax">
+            <span t-field="seguro.ambiental_insurance_policy" />
+        </td>
+        <td class="tg05-0lax">
+            <span t-field="seguro.transport_insurance_partner_id.name" />
+        </td>
+        <td class="tg05-0lax">
+            <span t-field="seguro.transport_insurance_policy" />
+        </td>
+        <td class="tg05-0lax">
+            <span t-field="seguro.insurance_amount" />
+        </td>
+      </tr>
+  </t>
+</tbody>
+</table>
+
+<br/>
+
+<table class="tg06" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg06-9h5v" colspan="6" style="font-size:14px;">ORIGEN / DESTINO</td>
+  </tr>
+  <tr>
+    <td class="tg06-dydl"></td>
+    <td class="tg06-dydl">RFC</td>
+    <td class="tg06-dydl">Nombre</td>
+    <td class="tg06-dydl">Residencia fiscal</td>
+    <td class="tg06-dydl">Identidad Tributaria</td>
+    <td class="tg06-dydl">Fecha de Salida o Llegada</td>
+  </tr>
+  <t t-foreach="o.location_origin_ids" t-as="origen">
+      <tr>
+        <td class="tg06-cly1">Origen</td>
+        <td class="tg06-cly1"><span t-esc="origen.location_partner_id.vat_split"/></td>
+        <td class="tg06-cly1"><span t-esc="origen.location_partner_id.name"/></td>
+        <td class="tg06-0lax"><span t-esc="origen.location_partner_id.country_id.name" t-if="origen.location_partner_id.country_id.code != 'MX'"/></td>
+        <td class="tg06-0lax"><span t-esc="origen.location_partner_id.num_reg_trib" t-if="origen.location_partner_id.country_id.code != 'MX'"/></td>
+        <td class="tg06-cly1"><span t-esc="o.convert_datetime_to_tz(origen.location_date)" /></td>
+      </tr>
+      <tr>
+        <td class="tg06-cly1" colspan="6" style="border-bottom: 1px solid black;">Domicilio: <span t-esc="o.get_location_address(origen.location_partner_id, origen.location_partner_references)" /></td>
+      </tr>
+  </t>
+  
+  <t t-foreach="o.location_destiny_ids" t-as="destino">
+      <tr>
+        <td class="tg06-0a7q">Destino</td>
+        <td class="tg06-0a7q"><span t-esc="destino.location_partner_id.vat_split"/></td>
+        <td class="tg06-0a7q"><span t-esc="destino.location_partner_id.name"/></td>
+        <td class="tg06-73oq"><span t-esc="destino.location_partner_id.country_id.name" t-if="destino.location_partner_id.country_id.code != 'MX'"/></td>
+        <td class="tg06-73oq"><span t-esc="destino.location_partner_id.num_reg_trib" t-if="destino.location_partner_id.country_id.code != 'MX'"/></td>
+        <td class="tg06-0a7q"><span t-esc="o.convert_datetime_to_tz(destino.location_date)" /></td>
+      </tr>
+      <tr>
+        <td class="tg06-cly1" colspan="6" style="border-bottom: 1px solid black;">Domicilio: <span t-esc="o.get_location_address(destino.location_partner_id, destino.location_partner_references)" /></td>
+      </tr>
+  </t>
+</tbody>
+</table>
+
+<br/>
+
+<table class="tg07" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg07-9h5v" colspan="6" style="font-size:14px;">FIGURAS DE TRANSPORTE</td>
+  </tr>
+  <tr>
+    <td class="tg07-dydl"></td>
+    <td class="tg07-dydl">RFC</td>
+    <td class="tg07-dydl">Nombre</td>
+    <td class="tg07-dydl">Licencia</td>
+    <td class="tg07-dydl">Residencia fiscal</td>
+    <td class="tg07-dydl">Identidad Tributaria</td>
+  </tr>
+  <t t-foreach="o.driver_figure_ids" t-as="operador">
+      <tr>
+        <td class="tg07-cly1">01 - Operador</td>
+        <td class="tg07-cly1"><span t-field="operador.driver_cp_vat" /></td>
+        <td class="tg07-cly1"><span t-field="operador.partner_id.name" /></td>
+        <td class="tg07-cly1"><span t-field="operador.cp_driver_license" /></td>
+        <td class="tg07-0lax"></td>
+        <td class="tg07-0lax"></td>
+      </tr>
+      <tr t-if="operador.add_address">
+        <td class="tg07-cly1" colspan="6" style="border-bottom: 1px solid black;">
+            <span style="font-weight:bold">Domicilio:</span> <span t-esc="o.get_location_address(operador.partner_id, '')" />
+        </td>
+      </tr>
+  </t>
+  <t t-foreach="o.other_figure_ids" t-as="figura">
+      <tr>
+            <td class="tg07-cly1"><span t-field="figura.figure_type_id.code" /> - <span t-field="figura.figure_type_id.name" /></td>
+            <td class="tg07-cly1"><span t-field="figura.partner_id.vat" /></td>
+            <td class="tg07-cly1"><span t-field="figura.partner_id.name" /></td>
+            <td class="tg07-cly1"></td>
+            <td class="tg07-0lax"><span t-esc="figura.partner_id.country_id.name" t-if="figura.partner_id.country_id.code != 'MX'"/></td>
+            <td class="tg07-0lax"><span t-esc="figura.partner_id.num_reg_trib" t-if="figura.partner_id.country_id.code != 'MX'"/></td>
+          </tr>
+      <tr t-if="figura.transport_part_ids">
+        <td class="tg07-1wig" colspan="6"><strong>Partes Transporte: </strong>
+            <span t-raw="'%s &lt;br&gt;' % figura.transport_part_ids and ','.join(['[' + x.code + ' ' + x.name + '] - ' for x in figura.transport_part_ids]) or '-'"/>
+        </td>
+      </tr>
+      <tr  t-if="figura.add_address">
+        <td class="tg07-cly1" colspan="6" style="border-bottom: 1px solid black;">
+            <span style="font-weight:bold">Domicilio:</span> <span t-esc="o.get_location_address(figura.partner_id, '')" />
+        </td>
+      </tr>
+  </t>
+</tbody>
+</table>
+
+<br/>
+
+<table class="tg08" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg08-9h5v" colspan="8" style="font-size:14px;">DETALLE MERCANCIAS</td>
+  </tr>
+  <tr>
+    <td class="tg08-dydl">Cantidad</td>
+    <td class="tg08-dydl">Unidad</td>
+    <td class="tg08-dydl">Clave<br />Producto/Servicio</td>
+    <td class="tg08-dydl">Tipo Material Peligroso</td>
+    <td class="tg08-dydl">Embalaje</td>
+    <td class="tg08-dydl">Peso en Kg</td>
+    <td class="tg08-dydl">Fracción arancelaria</td>
+    <td class="tg08-dydl">Pedimento</td>
+  </tr>
+    <t t-foreach="o.invoice_line_complement_cp_ids" t-as="m">
+      <tr>
+        <td class="tg08-cly1"><span t-field="m.quantity" /></td>
+        <td class="tg08-cly1"><span t-field="m.sat_uom_id" /></td>
+        <td class="tg08-cly1"><span t-field="m.sat_product_id" /></td>
+        <td class="tg08-cly1">
+            <span t-field="m.hazardous_key_product_id" t-if="m.hazardous_key_product_id"/>
+            <span t-if="not m.hazardous_key_product_id">-</span>
+        </td>
+        <td class="tg08-0lax">
+            <span t-field="m.tipo_embalaje_id" t-if="m.tipo_embalaje_id"/>
+            <span t-if="not m.tipo_embalaje_id">-</span>
+        </td>
+        <td class="tg08-0lax">
+            <span t-field="m.weight_charge" />
+        </td>
+        <td class="tg08-0lax">
+            <span t-field="m.arancel_id" t-if="m.arancel_id"/>
+            <span t-if="not m.arancel_id">-</span>
+        </td>
+        <td class="tg08-0lax">
+            <span t-field="m.pedimentos_ids[0].waybill_pedimento" t-if="m.pedimentos_ids"/>
+            <span t-if="not m.pedimentos_ids">-</span>
+        </td>
+      </tr>
+  </t>
+  <tr>
+    <td class="tg08-6l08"></td>
+    <td class="tg08-dydl">Número de guía</td>
+    <td class="tg08-6l08"></td>
+    <td class="tg08-dydl">Descripción de guía</td>
+    <td class="tg08-6l08"></td>
+    <td class="tg08-dydl">Peso guía</td>
+    <td class="tg08-6l08"></td>
+    <td class="tg08-6l08"></td>
+  </tr>
+  <tr>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+    <td class="tg08-0lax"></td>
+  </tr>
+</tbody>
+</table>
+
+<table class="tg09" style="width: 100%">
+<tbody>
+  <tr>
+    <td class="tg09-1wig">Peso bruto total:</td>
+    <td class="tg09-cly1"><span t-field="o.weight_charge_total" /></td>
+    <td class="tg09-1wig">Unidad de peso:</td>
+    <td class="tg09-cly1"><span t-field="o.uom_weight_id" /></td>
+    <td class="tg09-1wig">Número total de mercancías:</td>
+    <td class="tg09-cly1"><span t-field="o.total_quantity_items" /></td>
+  </tr>
+</tbody>
+</table>
+
+<br/>
+
+<div align="left">
+    <p style="font-size:10px;" t-if="o.type_rel_cfdi_ids"><strong>CFDI Relacionados</strong></p>
+</div>
+<table class="table table-condensed"  style="font-size:9px">
+    <thead>
+        <tr t-if="o.type_rel_cfdi_ids">
+            <th style="width:15%;text-align:center;">Relacion CFDI</th>
+            <th style="width:15%;text-align:center;">Folio</th>
+            <th style="width:15%;text-align:center;">UUID</th>
+        </tr>
+    </thead>      
+    <tbody class="invoice_tbody" t-if="o.type_rel_cfdi_ids">
+        <tr t-foreach="o.type_rel_cfdi_ids" t-as="cfdi">
+            
+            <td style="text-align:center;"><span t-field="o.type_rel_id"/></td>
+            <td style="text-align:center;"><span t-field="cfdi.invoice_id.move_name"/></td>
+            <td style="text-align:center;"><span t-field="cfdi.invoice_id.cfdi_folio_fiscal"/></td>
+        </tr>
+    </tbody>
+
+</table>
+                            
+
+<table class="table table-condensed" style="font-size:9px">
+    <tr>
+        <td rowspan="3">
+            <img t-if="o.cfdi_cbb" t-att-src="'data:image/png;base64,%s' % o.cfdi_cbb" style="width:5.5cm;height:5.5cm;"/>
+        </td>
+        <td><strong>Cadena Original:</strong><BR/><span t-field="o.cfdi_cadena_original" style="display:block;width:500px;word-wrap:break-word;"/></td>
+    </tr>
+    <tr>
+        <td><strong>Sello Digital Emisor:</strong><BR/><span t-field="o.sello" style="display:block;width:500px;word-wrap:break-word;"/></td>
+    </tr>
+    <tr>
+        <td><strong>Sello Digital SAT:</strong><BR/><span t-field="o.cfdi_sello" style="display:block;width:500px;word-wrap:break-word;"/></td>
+    </tr>
+</table>
+<div align="center">
+    <p style="font-size:8px;"><strong>ESTE DOCUMENTO ES UNA REPRESENTACION IMPRESA DE UN CFDI</strong></p>
+</div>
+
+                        </div> 
+                        
+                        <div class="footer">
+                            <table style="width: 100%">
+                                <tr >
+                                    <td style="font-size:12px;width: 35%;text-align: left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                                        <strong  style="font-size:12px;text-align: center;" ><span>   Pagina </span><span class="page" /> de <span class="topage" /></strong> 
+
+                                        
+                                    </td>
+                                    <td style="width: 20%;text-align: left;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                                    </td>
+                                    <td style="width: 30%;text-align: center;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                                    </td>
+                                    <td style="width: 15%;text-align: right;border: 1px solid #07190B;border-collapse: collapse;padding: 1px;border-bottom: 1px;border-left: 1px;border-right: 1px;">
+                                         <strong  style="font-size:12px;text-align: center;" ><span t-field="o.company_id.name" /></strong><br/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </t>
+            </t>
+        </template>
+
+        <report
+            id = "report_carta_porte_trabis"
+            string="Carta Porte"
+            model="account.invoice"
+            name="carta_porte_report_trabis.carta_porte_trabis_qweb_report"
+            report_type="qweb-pdf"/>
+
+        <record id="report_carta_porte_trabis" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="carta_porte_report_trabis.paper_carta_porte_report"/>
+            <field name="print_report_name">'Carta Porte '+str(object.number)+'.pdf'</field>
+        </record>
+    </data>
+
+</odoo>
