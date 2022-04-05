@@ -26,8 +26,8 @@
 
     """,
     'author': 'German Ponce Dominguez',
-    'website': 'http://poncesoft.blogspot.mx',
-    "support": "german.ponce@outlook.com",
+    'website': 'https://argil.mx',
+    "support": "german.ponce@argil.mx",
     'depends': [
                     'account',
                     'l10n_mx_einvoice',
